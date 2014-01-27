@@ -10,5 +10,5 @@ RUN cd redis-2.6.16 && make install
 #
 # build:  docker build -rm -t jamesm/redis-base:2.6.16 .
 # run:    docker run -rm -i -t jamesm/redis-base:2.6.16 /bin/bash 
-#         docker run -rm -link=redis0:redis -i -t jamesm/redis-base /bin/bash 
+#  (cli)  docker run -rm -link=redis0:redis -i -t -name=redis-cli jamesm/redis-base /bin/bash 
 #
