@@ -12,5 +12,5 @@ ENV GOPATH /gocode
 ENV PATH /gocode/bin:$PATH
 #
 # build:  docker build -t jamesm/golang-base:1.2 .
-# run:    docker run -i -t -v $GOPATH:/gocode/src -name go1.2 jamesm/golang-base:1.2 /bin/bash
+# run:    docker run -i -t -v $GOPATH:/gocode/src -v $GOPATH/bin:/gocode/bin -name go1.2 jamesm/golang-base:1.2 /bin/bash
 #
