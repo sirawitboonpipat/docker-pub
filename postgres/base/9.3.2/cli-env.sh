@@ -1,0 +1,4 @@
+#!/bin/bash
+#
+export PGHOSTADDR=$PG_PORT_5432_TCP_ADDR
+export PGPORT=$PG_PORT_5432_TCP_PORT
