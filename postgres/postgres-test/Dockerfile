@@ -9,7 +9,12 @@ MAINTAINER James McKernan james@hvflabs.com
 #
 VOLUME ["/data"]
 EXPOSE 5432
-USER postgres 
+ADD run-test.sh run-test.sh
+ADD pg_hba.conf pg_hba.conf
+RUN chmod 0655 pg_hba.conf
+ADD postgresql.conf postgresql.conf
+RUN chmod 0655 postgresql.conf
+ENTRYPOINT ["/bin/bash", "/run-test.sh"]
 
 # build: docker build -t jamesm/postgres-test .
-# run:   docker run -d -name=pg-test -v /tmp/postgres_test:/data -u postgres -P jamesm/postgres-test
+# run:   docker run -d -P -v /tmp/pg0/:/data -u postgres --name pg-test jamesm/postgres-test:9.3.2

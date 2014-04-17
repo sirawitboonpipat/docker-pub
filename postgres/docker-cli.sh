@@ -2,11 +2,11 @@
 #
 
 NAME=pg-cli
-PG_CONTAINER=pg0
+PG_CONTAINER=pg-test
 
 # try to run it, if you can then try too attach to it
 #
-docker run -i -t --link=$PG_CONTAINER=pg0:pg --name=$NAME \
+docker run -i -t --link=$PG_CONTAINER:pg --name=$NAME \
     jamesm/postgres-base /bin/bash
 
 if [ $? -ne 0 ]; then 
